@@ -1,132 +1,229 @@
-import com.sun.tools.javac.Main;
+//import com.sun.tools.javac.Main;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class MainMenu extends JFrame implements ActionListener
+//**************MAIN CLASS**************//
+public class MainMenu extends JFrame implements ActionListener //MainMenu inherits from JFrame and implements the Action Listener interface
 {
-    JMenu booksMenu; //books variable
-    JMenu customerMenu; //customer variable
-    JMenu ordersMenu;
-    JLabel response; // main JLabel
+    JMenu booksMenu; //books global variable
+    JMenu customerMenu; //customer global variable
+    JMenu ordersMenu; //orders global variable
+    private static JMenuItem aBooks, eBooks, rBooks, sBooks, aCustomers, eCustomers, rCustomers, sCustomers, pOrder, eOrder, rOrder, sOrder; //JMenuItem global variables
 
+//***************MAIN CLASS*****************//
     public static void main(String[] args) {
-        MainMenu frame = new MainMenu(); //Creating the window
+        MainMenu frame = new MainMenu(); //calling the MainMenu JFrame window
         frame.setVisible(true); //making it visible
     }
 
-    public MainMenu(){
-        Container pane;
+//***************CONSTRUCTOR**************//
+    public MainMenu() {
+            Container pane; //content pane variable
 
-        setTitle     ("McCarthys Main Menu");
-        setSize      (600,200);
-        setResizable (false);                   //window properties
-        setLocation  (250,200);
+            setTitle("McCarthys Main Menu");
+            setSize(600, 200);
+            setResizable(false);                   //window properties
+            setLocation(250, 200);
 
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+            setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        pane = getContentPane();
-        pane.setLayout(new FlowLayout());
+            pane = getContentPane(); //calling the content pane
+            pane.setLayout(new FlowLayout()); //setting the layout of the JFrame to FlowLayout
 
-        createBooksMenu(); //calling books and customer methods
-        createCustomerMenu();
-        createOrdersMenu();
+            createBooksMenu(); //calling books customer and orders methods
+            createCustomerMenu();
+            createOrdersMenu();
 
-        JMenuBar menu = new JMenuBar();
-        setJMenuBar(menu);
-        menu.add(Box.createHorizontalGlue()); //this line of code was got from https://stackoverflow.com/questions/8560810/aligning-jmenu-on-the-right-corner-of-jmenubar-in-java-swing
-                                                //right aligns menu bar
+            JMenuBar menu = new JMenuBar(); //creating an instance of the JMenuBar class
+            setJMenuBar(menu); //setting the JMenuBar up
+            menu.add(Box.createHorizontalGlue()); //this line of code was got from https://stackoverflow.com/questions/8560810/aligning-jmenu-on-the-right-corner-of-jmenubar-in-java-swing
+            //right aligns menu bar
 
-        menu.setBackground(Color.lightGray);    //added components to the menu bar and their properties
-        menu.add(booksMenu);
-        menu.add(customerMenu);
-        menu.add(ordersMenu);
+            menu.setBackground(Color.lightGray);    //added components to the JMenu bar
+            menu.add(booksMenu);
+            menu.add(customerMenu);
+            menu.add(ordersMenu);
 
-        JLabel label = new JLabel("Welcome to Mc Carthys Book Store");
-        Font font = new Font("monospaced",Font.PLAIN,24);
-        label.setFont(font);
-        pane.add(label); //adding label to the frame
-    }
+            JLabel label = new JLabel("Welcome to Cian Mc's Book Store"); //main header
+            Font font = new Font("monospaced", Font.PLAIN, 28); //font for the header
+            label.setFont(font); //applying the font to the header
+            pane.add(label); //adding label to the JFrame
+        }
 
-   public
-   void actionPerformed(ActionEvent event) {        //JOHN WALSH NOTES
-        String  menuName;
-      menuName = event.getActionCommand(); // what's written on the item that was clicked
-       // note the String comparison
-       if (menuName.equals("Quit")) {
-           System.exit(0);
-        } // end if
-        else {
-            response.setText("Menu Item '" + menuName + "' is selected.");
-       } // end else
-    } // end actionPerform          JOHN WALSH NOTES END
+//**************Action Event Code (Buttons)**************//
+        public void actionPerformed (ActionEvent e) //coded with the help of John Brosnan
+        {
+            if (e.getSource() == aBooks) { //if aBooks (Add Book) is clicked
+                JOptionPane.showMessageDialog(null, "Re-directing you to Add Book Page"); //display this message
+                AddBook add = new AddBook(); //create an instance of the AddBook class
+                add.setVisible(true); //make the AddBook JFrame visible
+                this.setVisible(false);//hide the current MainMenu JFrame window
+            }
 
-    public void createBooksMenu() {
-        JMenuItem item1; //item in the menubar variable
+            else if (e.getSource() == eBooks) {
+                JOptionPane.showMessageDialog(null, "Re-directing you to Edit Book Page");
 
-        booksMenu = new JMenu("Books"); //creating books
+                EditBook edit = new EditBook();
 
-        item1 = new JMenuItem("Add Book");
-        item1.addActionListener(this);
-        booksMenu.add(item1); //adding the item to the books option in the menu bar
+                edit.setVisible(true);
+                this.setVisible(false);
+            }
 
-        item1 = new JMenuItem("Edit Book");
-        item1.addActionListener(this);
-        booksMenu.add(item1);
+            else if (e.getSource() == rBooks) {
+                JOptionPane.showMessageDialog(null, "Re-directing you to Remove Book Page");
 
-        item1 = new JMenuItem("Remove Book");
-        item1.addActionListener(this);
-        booksMenu.add(item1);
+                RemoveBook remove = new RemoveBook();
 
-        item1 = new JMenuItem("Search Books");
-        item1.addActionListener(this);
-        booksMenu.add(item1);
-    } // end of books menu option
+                remove.setVisible(true);
+                this.setVisible(false);
+            }
 
-    private void createCustomerMenu(){
-        JMenuItem item1; //item in the menubar variable
+            else if (e.getSource() == sBooks) {
+                JOptionPane.showMessageDialog(null, "Re-directing you to Search Book Page");
 
-        customerMenu = new JMenu("Customers"); //creating books
+                SearchBook search = new SearchBook();
 
-        item1 = new JMenuItem("Add Customer");
-        item1.addActionListener(this);
-        customerMenu.add(item1); //adding the item to the books option in the menu bar
+                search.setVisible(true);
+                this.setVisible(false);
+            }
 
-        item1 = new JMenuItem("Edit Customer");
-        item1.addActionListener(this);
-        customerMenu.add(item1);
+            else if (e.getSource() == aCustomers) {
+                JOptionPane.showMessageDialog(null, "Re-directing you to Add Customer Page");
 
-        item1 = new JMenuItem("Remove Customer");
-        item1.addActionListener(this);
-        customerMenu.add(item1);
+                AddCustomer addCustomer = new AddCustomer();
 
-        item1 = new JMenuItem("Search Customers");
-        item1.addActionListener(this);
-        customerMenu.add(item1);
-    }
+                addCustomer.setVisible(true);
+                this.setVisible(false);
+            }
 
-    private void createOrdersMenu(){
-        JMenuItem item1; //item in the menubar variable
+            else if (e.getSource() == eCustomers) {
+                JOptionPane.showMessageDialog(null, "Re-directing you to Edit Customer Page");
 
-        ordersMenu = new JMenu("Orders"); //creating books
+                EditCustomer editCustomer = new EditCustomer();
 
-        item1 = new JMenuItem("Add Order");
-        item1.addActionListener(this);
-        ordersMenu.add(item1); //adding the item to the books option in the menu bar
+                editCustomer.setVisible(true);
+                this.setVisible(false);
+            }
 
-        item1 = new JMenuItem("Edit Order");
-        item1.addActionListener(this);
-        ordersMenu.add(item1);
+            else if (e.getSource() == rCustomers) {
+                JOptionPane.showMessageDialog(null, "Re-directing you to Remove Customer Page");
 
-        item1 = new JMenuItem("Remove Order");
-        item1.addActionListener(this);
-        ordersMenu.add(item1);
+                RemoveCustomer removeCustomer = new RemoveCustomer();
 
-        item1 = new JMenuItem("Search Orders");
-        item1.addActionListener(this);
-        ordersMenu.add(item1);
-    }
+                removeCustomer.setVisible(true);
+                this.setVisible(false);
+            }
+
+            else if (e.getSource() == sCustomers) {
+                JOptionPane.showMessageDialog(null, "Re-directing you to Search Customer Page");
+
+                SearchCustomer searchCustomer = new SearchCustomer();
+
+                searchCustomer.setVisible(true);
+                this.setVisible(false);
+            }
+
+            else if (e.getSource() == pOrder) {
+                JOptionPane.showMessageDialog(null, "Re-directing you to Place Order Page");
+
+                PlaceOrder placeOrder = new PlaceOrder();
+
+                placeOrder.setVisible(true);
+                this.setVisible(false);
+            }
+
+            else if (e.getSource() == eOrder) {
+                JOptionPane.showMessageDialog(null, "Re-directing you to Edit Order Page");
+
+                EditOrder editOrder = new EditOrder();
+
+                editOrder.setVisible(true);
+                this.setVisible(false);
+            }
+
+            else if (e.getSource() == rOrder) {
+                JOptionPane.showMessageDialog(null, "Re-directing you to Remove Order Page");
+
+                RemoveOrder removeOrder = new RemoveOrder();
+
+                removeOrder.setVisible(true);
+                this.setVisible(false);
+            }
 
 
+
+            else if (e.getSource() == sOrder) {
+                JOptionPane.showMessageDialog(null, "Re-directing you to Search Order Page");
+
+                SearchOrder searchOrder = new SearchOrder();
+
+                searchOrder.setVisible(true);
+                this.setVisible(false);
+            }
+        }
+//****************JMENUBAR COMPONENTS******************//
+        public void createBooksMenu () { //coded with the help of John Brosnan
+
+            booksMenu = new JMenu("Books"); //creating 'books' in the JMenuBar
+
+            aBooks = new JMenuItem("Add Book");
+            aBooks.addActionListener(this); //adding an action listener to 'aBooks' (Add Book)
+            booksMenu.add(aBooks); //adding the JMenuItem to the books option in the menu bar
+
+            eBooks = new JMenuItem("Edit Book");
+            eBooks.addActionListener(this);
+            booksMenu.add(eBooks);
+
+            rBooks = new JMenuItem("Remove Book");
+            rBooks.addActionListener(this);
+            booksMenu.add(rBooks);
+
+            sBooks = new JMenuItem("Search Books");
+            sBooks.addActionListener(this);
+            booksMenu.add(sBooks);
+        } // end of 'books' JMenu option                    //Same process for 'Customers' and 'Orders'
+
+        private void createCustomerMenu () {
+
+            customerMenu = new JMenu("Customers"); //creating customers
+
+            aCustomers = new JMenuItem("Add Customer");
+            aCustomers.addActionListener(this);
+            customerMenu.add(aCustomers);
+
+            eCustomers = new JMenuItem("Edit Customer");
+            eCustomers.addActionListener(this);
+            customerMenu.add(eCustomers);
+
+            rCustomers = new JMenuItem("Remove Customer");
+            rCustomers.addActionListener(this);
+            customerMenu.add(rCustomers);
+
+            sCustomers = new JMenuItem("Search Customers");
+            sCustomers.addActionListener(this);
+            customerMenu.add(sCustomers);
+        }
+
+        private void createOrdersMenu () {
+
+            ordersMenu = new JMenu("Orders"); //creating orders
+
+            pOrder = new JMenuItem("Add Order");
+            pOrder.addActionListener(this);
+            ordersMenu.add(pOrder);
+
+            eOrder = new JMenuItem("Edit Order");
+            eOrder.addActionListener(this);
+            ordersMenu.add(eOrder);
+
+            rOrder = new JMenuItem("Remove Order");
+            rOrder.addActionListener(this);
+            ordersMenu.add(rOrder);
+
+            sOrder = new JMenuItem("Search Orders");
+            sOrder.addActionListener(this);
+            ordersMenu.add(sOrder);
+        }
 }
