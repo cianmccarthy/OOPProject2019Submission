@@ -9,12 +9,6 @@ public class EditCustomer extends JFrame implements ActionListener {
     JMenu ordersMenu;   //orders JMenu
     private static JMenuItem aBooks, eBooks, rBooks, sBooks, aCustomers, eCustomers, rCustomers, sCustomers, pOrder, eOrder, rOrder, sOrder;
 
-    public static void main(String[] args) {
-        EditCustomer frame = new EditCustomer(); //Creating the window
-        frame.setVisible(true); //making it visible
-
-
-    }
 
     public EditCustomer(){
         Container pane;

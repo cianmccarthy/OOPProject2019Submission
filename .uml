@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="848.0" y="1045.0">com</node>
+    <node x="1041.0" y="974.0">netscape</node>
+    <node x="0.0" y="0.0">Customer</node>
+    <node x="275.0" y="403.0">SearchOrder</node>
+    <node x="421.0" y="0.0">AddCustomer</node>
+    <node x="283.0" y="974.0">toolbarButtonGraphics</node>
+    <node x="998.0" y="1045.0">sun</node>
+    <node x="550.0" y="403.0">RemoveOrder</node>
+    <node x="825.0" y="403.0">MainMenu</node>
+    <node x="807.0" y="974.0">groovyjarjarasm</node>
+    <node x="0.0" y="608.0">EditOrder</node>
+    <node x="691.0" y="1045.0">java</node>
+    <node x="527.0" y="1045.0">javax</node>
+    <node x="216.0" y="0.0">Book</node>
+    <node x="932.0" y="791.0">HomeScreen</node>
+    <node x="765.0" y="791.0">Order</node>
+    <node x="275.0" y="608.0">SearchBook</node>
+    <node x="185.0" y="1045.0">images</node>
+    <node x="0.0" y="1116.0">org</node>
+    <node x="550.0" y="608.0">RemoveBook</node>
+    <node x="150.0" y="1116.0">jdk</node>
+    <node x="0.0" y="1045.0">META-INF</node>
+    <node x="708.0" y="0.0">AddBook</node>
+    <node x="0.0" y="403.0">PlaceOrder</node>
+    <node x="356.0" y="1045.0">groovy</node>
+    <node x="825.0" y="608.0">SearchCustomer</node>
+    <node x="0.0" y="974.0">groovyjarjarcommonscli</node>
+    <node x="0.0" y="791.0">RemoveCustomer</node>
+    <node x="275.0" y="791.0">EditCustomer</node>
+    <node x="520.0" y="791.0">EditBook</node>
+    <node x="559.0" y="974.0">groovyjarjarantlr</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="312.0" y="297.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

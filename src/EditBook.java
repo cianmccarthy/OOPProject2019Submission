@@ -11,13 +11,6 @@ public class EditBook extends JFrame implements ActionListener {
     private static JMenuItem aBooks, eBooks, rBooks, sBooks, aCustomers, eCustomers, rCustomers, sCustomers, pOrder, eOrder, rOrder, sOrder; //JMenuItem global variables
 
 
-    //**************MAIN METHOD: IMPLEMENTING EDITBOOK JFRAME WINDOW************//
-    public static void main(String[] args) { //Main Method
-        EditBook frame = new EditBook(); //creating the EditBook JFrame window
-        frame.setVisible(true); //making the frame visible
-    }
-
-
     //******************SETTING UP EDITBOOK JFRAME ******************//
     public EditBook(){
         Container pane; //creating the content pane

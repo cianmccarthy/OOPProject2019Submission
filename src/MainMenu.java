@@ -12,12 +12,6 @@ public class MainMenu extends JFrame implements ActionListener //MainMenu inheri
     JMenu ordersMenu; //orders global variable
     private static JMenuItem aBooks, eBooks, rBooks, sBooks, aCustomers, eCustomers, rCustomers, sCustomers, pOrder, eOrder, rOrder, sOrder; //JMenuItem global variables
 
-//***************MAIN CLASS*****************//
-    public static void main(String[] args) {
-        MainMenu frame = new MainMenu(); //calling the MainMenu JFrame window
-        frame.setVisible(true); //making it visible
-    }
-
 //***************CONSTRUCTOR**************//
     public MainMenu() {
             Container pane; //content pane variable

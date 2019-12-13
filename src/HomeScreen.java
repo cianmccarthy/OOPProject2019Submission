@@ -53,7 +53,7 @@ public class HomeScreen extends JFrame { //HomeScreen inherits from JFrame and i
         visitStoreButton = new JButton("Visit Book Store");   //'visit store' and 'quit' JButtons
         quitButton = new JButton("Quit");
 
-        JLabel image = new JLabel(new ImageIcon("E:\\Object Orientated Programming\\OOP2019\\OOP Project 2019\\OOPProject2019\\src\\books.png")); //displaying homescreen image using image icon in a JLabel
+        JLabel image = new JLabel(new ImageIcon("I:\\Object Orientated Programming\\OOP2019\\OOP Project 2019\\OOPProject2019\\src\\books.png")); //displaying homescreen image using image icon in a JLabel
         //IMAGE REFERENCE: http://www.iconarchive.com/show/my-seven-icons-by-itzikgur/books-1-icon.html
 
 

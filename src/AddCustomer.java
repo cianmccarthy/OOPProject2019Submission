@@ -21,12 +21,6 @@ public class AddCustomer extends JFrame implements ActionListener { //AddCustome
     JTextField namejt, dobjt, addressLine1jt, addressLine2jt, townjt, countyjt, phonejt;
     private static JButton add;
 
-    //*****MAIN METHOD*********//
-    public static void main(String[] args) {
-        AddCustomer frame = new AddCustomer(); //creating AddCustomer window
-        frame.setVisible(true); //making it visible
-    }
-
     //********CONSTRUCTOR*********//
     public AddCustomer() {
 

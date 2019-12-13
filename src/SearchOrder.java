@@ -14,12 +14,6 @@ public class SearchOrder extends JFrame implements ActionListener { //SearchOrde
     private static JMenuItem aBooks, eBooks, rBooks, sBooks, aCustomers, eCustomers, rCustomers, sCustomers, pOrder, eOrder, rOrder, sOrder;
     JTextField orderIdjt;
     JButton search;
-    
-    //******MAIN METHOD****//
-    public static void main(String[] args) {
-        SearchOrder frame = new SearchOrder(); //Creating the window
-        frame.setVisible(true); //making it visible
-    }
 
     //**********CONSTRUCTOR***********//
     public SearchOrder(){

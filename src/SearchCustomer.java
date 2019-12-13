@@ -15,12 +15,6 @@ public class SearchCustomer extends JFrame implements ActionListener { //AddCust
     JTextField namejt, dobjt;
     JButton search;
 
-    //********MAIN METHOD**********//
-    public static void main(String[] args) {
-        SearchCustomer frame = new SearchCustomer(); //Creating the window
-        frame.setVisible(true); //making it visible
-    }
-
     //**********CONSTRUCTOR*********//
     public SearchCustomer(){
         Container pane;

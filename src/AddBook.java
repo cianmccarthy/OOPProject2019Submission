@@ -22,13 +22,6 @@ public class AddBook extends JFrame implements ActionListener { //AddBook inheri
     private static JButton add;// view; //global variable for button that triggers that adds book to the arraylist
     JTextField titlejt, authorjt, isbnjt, pagesjt, pricejt; //global variables for textboxes
 
-    //**********MAIN METHOD**********//
-    public static void main(String[] args) { //Main Method
-        AddBook frame = new AddBook(); //creating the AddBook JFrame window
-        frame.setVisible(true); //making the window visible
-
-    }
-
     //*******************CONSTRUCTOR********************//
     public AddBook() {
 

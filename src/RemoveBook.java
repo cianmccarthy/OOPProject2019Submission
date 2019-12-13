@@ -9,13 +9,6 @@ public class RemoveBook extends JFrame implements ActionListener {
     JMenu ordersMenu;   //orders JMenu
     private static JMenuItem aBooks, eBooks, rBooks, sBooks, aCustomers, eCustomers, rCustomers, sCustomers, pOrder, eOrder, rOrder, sOrder;
 
-    public static void main(String[] args) {
-        RemoveBook frame = new RemoveBook(); //Creating the window
-        frame.setVisible(true); //making it visible
-
-
-    }
-
     public RemoveBook(){
         Container pane;
 

@@ -15,12 +15,6 @@ public class SearchBook extends JFrame implements ActionListener { //SearchBook 
     JButton search;
     JTextField namejt, isbnjt;
 
-    //********MAIN METHOD**********//
-    public static void main(String[] args) {
-        SearchBook frame = new SearchBook();
-        frame.setVisible(true);
-    }
-
     //*******CONSTRUCTOR*********//
     public SearchBook(){
 

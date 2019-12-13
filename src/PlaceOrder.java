@@ -22,17 +22,10 @@ public class PlaceOrder extends JFrame implements ActionListener { //PlaceOrder 
     JButton order;
     JTextField namejt, dobjt, titlejt, isbnjt, pricejt, orderIdjt;
 
-    //********MAIN METHOD*********//
-    public static void main(String[] args) {
-
-        PlaceOrder frame = new PlaceOrder(); //Creating the window
-        frame.setVisible(true); //making it visible
-    }
-
     //******CONTRUCTOR*******//
     public PlaceOrder(){
 
-      /*  //reloading the contents of the orders arraylist
+        //reloading the contents of the orders arraylist
         try {
             File p = new File("allOrders2.dat");
             FileInputStream fis = new FileInputStream(p);
@@ -50,7 +43,7 @@ public class PlaceOrder extends JFrame implements ActionListener { //PlaceOrder 
         catch (Exception ox){
             JOptionPane.showMessageDialog(null,"Exception Occurred");
             System.out.println(ox);
-        } */
+        }
 
         Container pane;
 

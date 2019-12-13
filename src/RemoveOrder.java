@@ -12,11 +12,6 @@ public class RemoveOrder extends JFrame implements ActionListener {
     JButton search;
     JTextField orderId;
 
-    public static void main(String[] args) {
-        RemoveOrder frame = new RemoveOrder(); //Creating the window
-        frame.setVisible(true); //making it visible
-    }
-
     public RemoveOrder(){
         Container pane;
 
@@ -165,7 +160,9 @@ public class RemoveOrder extends JFrame implements ActionListener {
             this.setVisible(false);
         }
 
-         if (e.getSource() == search) {    //if search button is clicked
+         if (e.getSource() == search) {//if search button is clicked
+             JOptionPane.showMessageDialog(null, "Removing Order");
+
         ArrayList<Order> orders = PlaceOrder.getOrders();    //get the ORDERS arraylist
 
 
